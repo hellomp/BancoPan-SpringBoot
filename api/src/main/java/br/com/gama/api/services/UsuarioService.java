@@ -15,11 +15,18 @@ public class UsuarioService {
   UsuarioRepository usuarioRepository;
 
   public Usuario findById(Integer id){
-    Optional<Usuario> obj = usuarioRepository.findById(id);
-    return obj.orElse(null);
+    Optional<Usuario> usuario = usuarioRepository.findById(id);
+    return usuario.orElse(null);
   }
 
   public List<Usuario> findAll(){
     return usuarioRepository.findAll();
+  }
+
+  public Usuario update(Integer id, Usuario usuario){
+    Usuario newUsuario = findById(id);
+    newUsuario.setNome(usuario.getNome());
+    newUsuario.setSenha(usuario.getSenha());
+    return usuarioRepository.save(newUsuario);
   }
 }
