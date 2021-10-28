@@ -34,4 +34,9 @@ public class UsuarioService {
     findById(id);
     usuarioRepository.deleteById(id);
   }
+
+  public Usuario create(Usuario usuario){
+    usuario.setId(null);
+    return usuarioRepository.save(usuario);
+  }
 }
