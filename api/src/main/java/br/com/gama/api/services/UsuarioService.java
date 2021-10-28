@@ -29,4 +29,9 @@ public class UsuarioService {
     newUsuario.setSenha(usuario.getSenha());
     return usuarioRepository.save(newUsuario);
   }
+
+  public void delete(Integer id){
+    findById(id);
+    usuarioRepository.deleteById(id);
+  }
 }

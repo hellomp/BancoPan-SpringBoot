@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -36,5 +37,11 @@ public class UsuarioController {
   public ResponseEntity<Usuario> update(@PathVariable Integer id, @RequestBody Usuario usuario){
     Usuario newUsuario = usuarioService.update(id, usuario);
     return ResponseEntity.ok().body(newUsuario);
+  }
+
+  @DeleteMapping("/{id}")
+  public ResponseEntity<Void> delete(@PathVariable Integer id){
+    usuarioService.delete(id);
+    return ResponseEntity.noContent().build();
   }
 }
