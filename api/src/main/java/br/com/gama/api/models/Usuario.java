@@ -29,6 +29,10 @@ public class Usuario implements Serializable{
   @Length(min = 3, max = 100)
   private String senha;
 
+  public Usuario() {
+    super();
+  }
+
   public Usuario(String nome, String senha) {
     this.nome = nome;
     this.senha = senha;
