@@ -18,7 +18,7 @@ public class Funcionario implements Serializable {
 	private String nome;
 	private Double salario;
 
-	@DBRef // referencia de collection dentro de outra
+	//@DBRef // referencia de collection dentro de outra
 	private Funcionario gestor;
 
 	public Funcionario() {

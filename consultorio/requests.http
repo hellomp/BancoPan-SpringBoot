@@ -1,0 +1,36 @@
+
+@host = http://localhost:8080
+
+GET {{host}}/medicos
+
+###
+
+GET {{host}}/medicos/618473b60879b55574e06ba1
+
+###
+
+POST {{host}}/medicos
+content-type: application/json
+
+{
+  "nome": "Weslley",
+  "documentoProfissional": "CRM 024-2",
+  "telefone": "(86)96200-0000",
+  "especialidade": "Urologista"
+}
+
+###
+
+POST {{host}}/consultas
+Content-Type: application/json
+
+{
+  "paciente": "Rita da Silva",
+  "prescricoes": "Tomar remédio x para dor 2 vezes ao dia por 5 dias.",
+  "exames": "Ressonancia Magnetica e Raio X",
+  "prontuario": "Paciente se queixa de dor nas costas",
+  "dataHora": "10:00 12/07/2021",
+  "medico": {
+    "id": "61846fe80879b55574e06b9d"
+  }
+}

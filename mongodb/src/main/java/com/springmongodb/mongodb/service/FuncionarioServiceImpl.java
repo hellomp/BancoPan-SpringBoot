@@ -31,11 +31,11 @@ public class FuncionarioServiceImpl implements FuncionarioService {
 	@Override
 	public Funcionario criar(Funcionario funcionario) {
 		
-		Funcionario gestor = 
+		/* Funcionario gestor = 
 			this.funcionarioRepository
 				.findById(funcionario.getGestor().getId())
 				.orElseThrow(() -> new IllegalArgumentException("gestor inexistente"));
-		funcionario.setGestor(gestor);
+		funcionario.setGestor(gestor); */
 		
 		return this.funcionarioRepository.save(funcionario);
 	}
