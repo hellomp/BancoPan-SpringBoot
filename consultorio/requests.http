@@ -4,11 +4,9 @@
 GET {{host}}/medicos
 
 ###
-
 GET {{host}}/medicos/618473b60879b55574e06ba1
 
 ###
-
 POST {{host}}/medicos
 content-type: application/json
 
@@ -20,7 +18,9 @@ content-type: application/json
 }
 
 ###
+GET {{host}}/consultas
 
+###
 POST {{host}}/consultas
 Content-Type: application/json
 
